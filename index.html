@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BETWEEN — п'єса</title>
+  <meta name="description" content="Між світлом і тінню. Між тим, що було, і тим, що могло бути." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b0b0d; --fg:#e7e7eb; --muted:#9aa0a6; --accent:#cdd3ff; --line:rgba(255,255,255,.08); }
+    html,body{height:100%}
+    body{ margin:0; background:var(--bg); color:var(--fg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+      line-height:1.6; letter-spacing:.2px;
+    }
+    a{color:inherit}
+    .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+    .section{padding:88px 0; position:relative}
+    .section + .section{border-top:1px solid var(--line)}
+
+    /* Hero */
+    .hero{min-height:92vh; display:grid; place-items:center; position:relative; overflow:hidden}
+    .grain:before{content:""; position:absolute; inset:-50%;
+      background:radial-gradient(ellipse at center, rgba(255,255,255,.08), rgba(0,0,0,0) 60%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity=".08"/></svg>');
+      mix-blend-mode:overlay; animation:grain 12s steps(10) infinite; pointer-events:none}
+    @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-2%,1%)}50%{transform:translate(1%,-1%)}75%{transform:translate(-1%,1%)}100%{transform:translate(0,0)}}
+
+    .heroInner{text-align:center}
+    .tag{display:inline-block; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:8px 12px; border-radius:999px}
+
+    /* BETWEEN title */
+    .logoWrap{margin:28px auto 6px; width:min(92vw,920px)}
+    .logo{width:100%; height:auto; display:block}
+    .logo text{transform-origin:50% 50%; animation:grow 5s cubic-bezier(.19,1,.22,1) forwards}
+    @keyframes grow{0%{transform:scale(.45); opacity:.0} 8%{opacity:.7} 100%{transform:scale(1); opacity:1}}
+
+    .brand{width:120px;height:auto; display:block; margin:0 auto 14px}
+    .sub{color:var(--muted); font-size:18px}
+    .cta{margin-top:28px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{border:1px solid var(--line); padding:12px 18px; border-radius:999px; text-decoration:none; transition:.25s background-color,.25s color,.25s border-color}
+    .btn:hover{background:#14141a; border-color:rgba(255,255,255,.14)}
+
+    /* Cards */
+    .grid{display:grid; gap:24px}
+    @media (min-width:860px){.grid{grid-template-columns:1.2fr .8fr}}
+    .card{border:1px solid var(--line); border-radius:16px; overflow:hidden;
+      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
+    .card h3{margin:0; padding:14px 16px; border-bottom:1px solid var(--line); font-weight:600}
+    .card .p{padding:16px}
+    video,.videoPh{display:block; width:100%; height:auto; background:#09090c}
+    .videoPh{aspect-ratio:16/9; display:grid; place-items:center; color:var(--muted); font-size:14px}
+
+    /* Chips */
+    .cols{display:grid; gap:16px}
+    @media (min-width:760px){.cols{grid-template-columns:repeat(4,1fr)}}
+    .chip{border:1px solid var(--line); border-radius:12px; padding:14px; background:rgba(255,255,255,.02)}
+    .chip b{display:block; font-weight:600}
+    .chip span{color:var(--muted); font-size:14px}
+
+    .quote{font-family:"Playfair Display",serif; font-size:32px; line-height:1.25; text-align:center; letter-spacing:.3px}
+    .quote em{opacity:.75}
+
+    .supportText{margin-top:10px; font-size:14px; color:#aeb1b7; border-left:3px solid var(--line); padding-left:10px}
+    .credits{display:grid; gap:6px; color:var(--muted)}
+    @media (min-width:760px){.credits{grid-template-columns:1fr}}
+
+    footer{padding:48px 0 72px; border-top:1px solid var(--line); text-align:center; color:var(--muted)}
+    @media (prefers-reduced-motion:reduce){ .logo text{animation:none} .grain:before{animation:none} }
+  </style>
+</head>
+<body>
+  <header class="hero grain section" id="top" aria-label="Головний екран">
+    <div class="wrap heroInner">
+      <!-- ЛОГОТИП Театру -->
+      <img class="brand" src="https://drive.google.com/uc?export=download&id=1ypiDEHHP3re5s0bS8vOYTNujDCYvQl_P" alt="Театр НАДИХ — логотип" />
+      <span class="tag">п'єса</span>
+
+      <!-- SVG - назва BETWEEN з рваними краями -->
+      <div class="logoWrap" aria-hidden="true">
+        <svg class="logo" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+          <title id="title">BETWEEN</title>
+          <desc id="desc">Назва п'єси з художньо рваними контурами літер</desc>
+          <defs>
+            <filter id="rough">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+              <feDisplacementMap in="SourceGraphic" scale="3"/>
+            </filter>
+            <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#f5f7ff" stop-opacity=".92"/>
+              <stop offset="100%" stop-color="#bfc6ff" stop-opacity=".85"/>
+            </linearGradient>
+          </defs>
+          <g filter="url(#rough)">
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+              font-size="160" font-weight="800" fill="url(#grad)" style="letter-spacing:.06em">BETWEEN</text>
+          </g>
+        </svg>
+      </div>
+
+      <p class="sub">Між світлом і тінню. Між тим, що було, і тим, що могло бути.</p>
+
+      <div class="credits">
+        <div><b>Автор п'єси</b><br>Ігор Чайка</div>
+        <div><b>Режисер</b><br>Олена Єделінскі</div>
+        <div><b>Звукорежисер</b><br>Михайло Єделінскі</div>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="#mood">Відчути</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Атмосфера -->
+    <section class="section" id="mood" aria-label="Атмосфера">
+      <div class="wrap grid">
+        <div class="card">
+          <h3>Перо і тиша</h3>
+          <video src="https://drive.google.com/uc?export=download&id=1i6XZKV51hAf2TERTd6NP8DF9VFgUjLp8"
+                 autoplay muted loop playsinline preload="metadata"></video>
+          <div class="p">Миттєві образи, що лишають питання. Без пояснень.</div>
+        </div>
+        <div class="card">
+          <h3>Прибирання сцени</h3>
+          <video src="https://drive.google.com/uc?export=download&id=1vSS15JW9sI9CpRxbW7Q3VtItOZydDaUN"
+                 autoplay muted loop playsinline preload="metadata"></video>
+          <div class="p">Світло і темрява змішуються, щоб зникнути.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Образи -->
+    <section class="section" id="characters" aria-label="Образи">
+      <div class="wrap">
+        <h2 style="margin:0 0 18px; font-size:28px">Образи</h2>
+        <div class="cols">
+          <div class="chip"><b>Той, хто рятує</b><span>Світло не завжди чисте.</span></div>
+          <div class="chip"><b>Той, хто спокушає</b><span>Темрява не завжди зла.</span></div>
+          <div class="chip"><b>Той, хто між</b><span>Людина. Вибір.</span></div>
+          <div class="chip"><b>Той, хто прибирає</b><span>Сліди зникають. Питання лишаються.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Цитата -->
+    <section class="section" id="quote" aria-label="Цитата">
+      <div class="wrap">
+        <p class="quote">«Ми не обираємо тих, кого рятуємо.» <em>— з нотаток янгола</em></p>
+      </div>
+    </section>
+
+    <!-- Сцена + Інфо + Підтримка -->
+    <section class="section" id="theatre" aria-label="Сцена та інформація">
+      <div class="wrap grid">
+        <div>
+          <h2 style="margin:0 0 12px; font-size:28px">Сцена</h2>
+          <p style="margin-top:0; color:var(--muted)">
+            Театр «Надих». Автор п'єси — <b>Ігор Чайка</b>.<br>
+            Постановка — <b>Олена Єделінскі</b>.
+          </p>
+          <p>Звукорежисер — <b>Михайло Єделінскі</b>.</p>
+          <p>Прем'єра: <b>дата</b> • Місце: <b>місце</b></p>
+          <p style="color:var(--muted)">Без зайвих слів. Лише простір між.</p>
+
+          <div class="supportText">
+            За підтримки Митрополії Австрії Вселенського Патріархату при Українській Православній Парафії у Відні
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Дві тіні</h3>
+          <video src="https://drive.google.com/uc?export=download&id=1mK1ncuZTKKrq5skmTe1tkU4t-Zgb9G2T"
+                 autoplay muted loop playsinline preload="metadata"></video>
+          <div class="p">Два силуети наближаються назустріч один одному.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Фінал -->
+    <section class="section" id="between" aria-label="Фінал BETWEEN">
+      <div class="wrap">
+        <div class="card">
+          <h3>BETWEEN</h3>
+          <video src="https://drive.google.com/uc?export=download&id=14MPlC-scLujfjbblgf3vfa9tmJ4e7PMj"
+                 autoplay muted loop playsinline preload="metadata"></video>
+          <div class="p">Слово, що з’являється з темряви й зникає в ній.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div style="margin-bottom:10px">Ти теж між?</div>
+      <div style="opacity:.8">Instagram • Telegram • Email</div>
+    </div>
+  </footer>
+
+  <script>
+    // Автовідтворення/пауза відео при вході/виході з екрану + клік по ролику включает/выключает звук только у него
+    (function(){
+      const vids=[...document.querySelectorAll('video')];
+      vids.forEach(v=>{ v.muted=true; v.playsInline=true; v.loop=true; });
+      if('IntersectionObserver' in window){
+        const io=new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{
+            const v=e.target;
+            if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
+          });
+        },{threshold:.35});
+        vids.forEach(v=>io.observe(v));
+      } else { vids.forEach(v=>v.play().catch(()=>{})); }
+      vids.forEach(v=>{
+        v.addEventListener('click',()=>{
+          vids.filter(x=>x!==v).forEach(x=>x.muted=true);
+          v.muted = !v.muted; if(!v.paused){ v.play().catch(()=>{}); }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
