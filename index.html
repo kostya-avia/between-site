@@ -42,9 +42,11 @@
     .btn:hover{background:#14141a; border-color:rgba(255,255,255,.14)}
 
     .grid{display:grid; gap:24px}
-    @media (min-width:860px){.grid{grid-template-columns:1.2fr .8fr}}
+    @media (min-width:860px){
+      .grid{grid-template-columns:1.2fr .8fr}
+      .grid.grid-even{grid-template-columns:repeat(2,1fr)}
+    }
     .card{border:1px solid var(--line); border-radius:16px; overflow:hidden; background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
-    .card h3{margin:0; padding:14px 16px; border-bottom:1px solid var(--line); font-weight:600}
     .card .p{padding:16px}
     video{display:block; width:100%; height:auto; background:#09090c}
 
@@ -109,14 +111,12 @@
   <main>
     <!-- Атмосфера -->
     <section class="section" id="mood" aria-label="Атмосфера">
-      <div class="wrap grid">
+      <div class="wrap grid grid-even">
         <div class="card">
-          <h3>Перо і тиша</h3>
           <video src="01_Feather_LightDark.MOV" autoplay muted loop playsinline preload="metadata"></video>
           <div class="p">Миттєві образи, що лишають питання. Без пояснень.</div>
         </div>
         <div class="card">
-          <h3>Прибирання сцени</h3>
           <!-- Важно: в репозитории расширение у этого файла — .mov (строчные) -->
           <video src="03_Broom_Feathers.mov" autoplay muted loop playsinline preload="metadata"></video>
           <div class="p">Світло і темрява змішуються, щоб зникнути.</div>
@@ -127,7 +127,6 @@
     <!-- Образи -->
     <section class="section" id="characters" aria-label="Образи">
       <div class="wrap">
-        <h2 style="margin:0 0 18px; font-size:28px">Образи</h2>
         <div class="cols">
           <div class="chip"><b>Той, хто рятує</b><span>Світло не завжди чисте.</span></div>
           <div class="chip"><b>Той, хто спокушає</b><span>Темрява не завжди зла.</span></div>
@@ -148,7 +147,6 @@
     <section class="section" id="theatre" aria-label="Сцена та інформація">
       <div class="wrap grid">
         <div>
-          <h2 style="margin:0 0 12px; font-size:28px">Сцена</h2>
           <p style="margin-top:0; color:var(--muted)">
             Театр «Надих». Автор п'єси — <b>Ігор Чайка</b>.<br>
             Постановка — <b>Олена Єделінскі</b>.
@@ -163,7 +161,6 @@
         </div>
 
         <div class="card">
-          <h3>Дві тіні</h3>
           <video src="02_Angels_Shadows.MOV" autoplay muted loop playsinline preload="metadata"></video>
           <div class="p">Два силуети наближаються назустріч один одному.</div>
         </div>
@@ -174,7 +171,6 @@
     <section class="section" id="between" aria-label="Фінал BETWEEN">
       <div class="wrap">
         <div class="card">
-          <h3>BETWEEN</h3>
           <video src="04_BETWEEN_Title.MOV" autoplay muted loop playsinline preload="metadata"></video>
           <div class="p">Слово, що з’являється з темряви й зникає в ній.</div>
         </div>
