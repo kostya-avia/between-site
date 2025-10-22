@@ -43,8 +43,8 @@
 
     .grid{display:grid; gap:24px}
     @media (min-width:860px){
-      .grid{grid-template-columns:1.2fr .8fr}
-      .grid.grid-even{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid.grid-split{grid-template-columns:1.2fr .8fr}
     }
     .card{border:1px solid var(--line); border-radius:16px; overflow:hidden; background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
     .card .p{padding:16px}
@@ -111,7 +111,7 @@
   <main>
     <!-- Атмосфера -->
     <section class="section" id="mood" aria-label="Атмосфера">
-      <div class="wrap grid grid-even">
+      <div class="wrap grid">
         <div class="card">
           <video src="01_Feather_LightDark.MOV" autoplay muted loop playsinline preload="metadata"></video>
           <div class="p">Миттєві образи, що лишають питання. Без пояснень.</div>
@@ -145,7 +145,7 @@
 
     <!-- Сцена + Інфо + Підтримка -->
     <section class="section" id="theatre" aria-label="Сцена та інформація">
-      <div class="wrap grid">
+      <div class="wrap grid grid-split">
         <div>
           <p style="margin-top:0; color:var(--muted)">
             Театр «Надих». Автор п'єси — <b>Ігор Чайка</b>.<br>
@@ -181,7 +181,11 @@
   <footer role="contentinfo">
     <div class="wrap">
       <div style="margin-bottom:10px">Ти теж між?</div>
-      <div style="opacity:.8">Instagram • Telegram • Email</div>
+      <div style="opacity:.8; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://www.instagram.com/theatr_nadykh?igsh=bmU4andwcHo5NXdr&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/share/1FgF6qF3Ud/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+        <span>Email</span>
+      </div>
     </div>
   </footer>
 
