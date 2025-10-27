@@ -104,6 +104,9 @@
     /* Медиа-контейнер 16:9 без чёрных полос */
     .media{position:relative; width:100%; padding-top:56.25%; background:#09090c; overflow:hidden}
     .media > video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#09090c}
+    /* Доп. кроп для пера (в самом видео есть поля) */
+    .media--feather video{ object-fit:cover; transform:scale(1.14); object-position:center; }
+    @media (max-width:520px){ .media--feather video{ transform:scale(1.22); } }
 
     /* Карта */
     .map{position:relative; width:100%; padding-top:56.25%; border:1px solid var(--line); border-radius:12px; overflow:hidden}
@@ -172,7 +175,7 @@
     <section class="section" id="mood" aria-label="Атмосфера">
       <div class="wrap grid">
         <div class="card">
-          <div class="media">
+          <div class="media media--feather">
             <video src="01_Feather_LightDark.MOV" autoplay muted loop playsinline preload="metadata"></video>
           </div>
           <div class="p">Миттєві образи, що лишають питання. Без пояснень.</div>
